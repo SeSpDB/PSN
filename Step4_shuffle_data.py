@@ -46,6 +46,7 @@ else:
 
 SAVE_PAIR_Path = "/home/deeplearning/nas-files/tracer/data/equal_patch_data/train_pair_patch/"
 shuffled_data = []
+output_directory = ""
 for data_file in groups:
     directory = SAVE_PAIR_Path + data_file  # 设置你的文件目录
     print("processing ",directory,task)

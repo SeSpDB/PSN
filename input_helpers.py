@@ -131,13 +131,22 @@ class InputHelper(object):
                     continue
                 if len(l[2])>4:
                     continue
+
+                try:
+                    # 尝试将第三个字段转换为整数
+                    label = int(l[2])
+                except ValueError:
+                    # 如果转换失败，打印错误和对应的行内容
+                    print("Cannot convert to int:", l)
+                    continue  # 跳过这行数据
+                
                 if random() > 0.5:
                     x1.append(l[0].lower())
                     x2.append(l[1].lower())
                 else:
                     x1.append(l[1].lower())
                     x2.append(l[0].lower())
-                y.append(int(l[2]))
+                y.append(label)
 
         print('now total...')
         size_x1 = sys.getsizeof(x1) / 1024 / 1024

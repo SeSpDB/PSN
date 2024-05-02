@@ -13,15 +13,22 @@ python Step3_get_corpus_many.py [task_name] [option_number]
 ## Step4 shuffle data
 python Step4_shuffle_data.py [task_name]
 - [task_name ] = { full,patch,slice }
-## Step6 
+## Step6 train siamese network
 
-python Step5_train_siamese_network.py [task_name]
+python Step6_train_siamese_network.py [task_name]
 - [task_name ] = { full,patch,slice }
 
-python Step5_train_siamese_network.py full  >> /home/deeplearning/nas-files/tracer/src/tracer/tracer-master/siamese-lstm-gpu/Logs/train_full_1.log 2>&1
-python Step5_train_siamese_network.py patch  >> /home/deeplearning/nas-files/tracer/src/tracer/tracer-master/siamese-lstm-gpu/Logs/train_patch_1.log 2>&1
+nohup python Step6_train_siamese_network.py full  > /home/deeplearning/nas-files/tracer/src/tracer/tracer-master/siamese-lstm-gpu/Logs/train_full_1.log 2>&1 &
+nohup python Step6_train_siamese_network.py patch  > /home/deeplearning/nas-files/tracer/src/tracer/tracer-master/siamese-lstm-gpu/Logs/train_patch_1.log 2>&1 &
+nohup python Step6_train_siamese_network.py slice  > /home/deeplearning/nas-files/tracer/src/tracer/tracer-master/siamese-lstm-gpu/Logs/train_slice_1.log 2>&1 &
 
-# About relate code 
+# About related Code
+## RQ3 Ablation Evaluation
+
+
+
+## RQ4 Comparative Effectiveness
+
 1. Redebug 
 >see the files in the folder /home/deeplearning/nas-files/tracer/src/tracer/tracer-master/siamese-lstm-gpu/ReDeBug
 
